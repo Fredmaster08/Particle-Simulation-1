@@ -1,32 +1,18 @@
 
 #include <raylib.h>
-#include <stdio.h>
 
 typedef struct Particle {
     Vector2 pos;
     Vector2 vel;
+    float gravity;
 }Particle;
 
-typedef struct verletObject {
-    Vector2 current_position;
-    Vector2 old_position;
-    Vector2 acceleration
-}verletObject;
-
-typedef struct Solver {
+void updatePosition() {
     
 }
 
-void updatePosition(float dt) {
-    const Vector2 velocity = current_position - old_position;
-    // saving current pos
-    old_position = current_position;
-    current_position = current_position + velocity + acceleration * dt * dt;
-    acceleration = {};
-}
-
-void accelerate(Vector2 acc) {
-    acceleration += acc;
+void accelerate() {
+    
 }
     
 int main() {
@@ -34,17 +20,14 @@ int main() {
     InitWindow(800, 600, "Particles");
     SetTargetFPS(60);
 
-    int Particles = 100;
-
-
     while(!WindowShouldClose()) {
 
         BeginDrawing();
 
         ClearBackground(BLACK);
-            
         
-        
+        DrawCircle(400, 100, 10, WHITE);
+
         EndDrawing();
     }
     CloseWindow();
