@@ -7,13 +7,19 @@ typedef struct Particle {
     Vector2 vel;
 }Particle;
 
+typedef struct {
+    Vector2 current_position;
+    Vector2 old_position;
+    Vector2 acceleration
+}
+
 int main() {
 
     InitWindow(800, 600, "Particles");
     SetTargetFPS(60);
 
     int Particles = 100;
-    //int randomValue = GetRandomValue(10, 100);
+
 
     while(!WindowShouldClose()) {
 
@@ -21,10 +27,7 @@ int main() {
 
         ClearBackground(BLACK);
             
-        for(int i = 0; i < Particles; i++){
-            DrawCircle(30 * i, 20, 10, WHITE);
-            
-        }
+        
         
         EndDrawing();
     }
